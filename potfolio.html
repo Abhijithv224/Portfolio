@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abhijith V - Portfolio</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+.education-section {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(20,20,20,0.9));
+  text-align: center;
+}
+
+.education-section h2 {
+  font-size: 2.5rem;
+  color: #FFD700;
+  margin-bottom: 40px;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+}
+
+.education-container {
+  display: grid;
+  gap: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.edu-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  text-align: left;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.edu-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+}
+
+.edu-card h3 {
+  color: #FFD700;
+  margin-bottom: 5px;
+}
+
+.edu-institute {
+  color: #ccc;
+  font-weight: bold;
+}
+
+.edu-year {
+  font-size: 0.9rem;
+  color: #bbb;
+  margin-bottom: 10px;
+}
+
+.edu-details {
+  color: #eee;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(255,255,255,0.7);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #FFD700;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+}
+
+.contact-form button {
+  background: #FFD700;
+  color: black;
+  font-weight: bold;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-form button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.9);
+}
+
+.counter-card {
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  min-width: 120px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+.counter-card:hover {
+  transform: translateY(-5px);
+}
+.counter {
+  font-size: 2rem;
+  color: #FFD700;
+}
+
+
+     button {
+  background: #FFD700;
+  color: black;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+}
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: white;
+      line-height: 1.6;
+    }
+    header {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      z-index: 1000;
+    }
+    header h1 {
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+    }
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffd700;
+    }
+    .social-icons a {
+      margin-left: 15px;
+      font-size: 1.3rem;
+      transition: transform 0.3s, color 0.3s;
+    }
+    .social-icons a:hover {
+      transform: scale(1.2);
+      color: #ffd700;
+    }
+    section {
+      padding: 100px 20px;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #ffd700;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s, background 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.15);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    /* Profile Image Animation */
+    .profile-pic {
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      border: 4px solid #FFD700;
+      box-shadow: 0 0 25px #FFD700, 0 0 50px rgba(255, 215, 0, 0.5);
+      animation: glowPulse 2s infinite ease-in-out;
+    }
+    @keyframes glowPulse {
+      0%, 100% { box-shadow: 0 0 20px #FFD700, 0 0 50px rgba(255, 215, 0, 0.4); }
+      50% { box-shadow: 0 0 40px #FFD700, 0 0 80px rgba(255, 215, 0, 0.8); }
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0,0,0,0.4);
+      margin-top: 20px;
+    }
+    /* Skills */
+    .skills span {
+      background: #007BFF;
+      padding: 10px 16px;
+      border-radius: 25px;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .skills span:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px rgba(255,255,255,0.6);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>ABHIIJITH V</h1>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#fun">Fun & Memories</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="social-icons">
+    <a href="C:\Users\hp\Desktop\portfoliya\abhijith cv.pdf" target="_blank" title="Resume"><i class="fas fa-file-alt"></i></a>
+    <a href="https://github.com/Abhijithv224" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/abhijith-v-98b493281" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="https://www.instagram.com/__.___abhiii" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+  </div>
+</header>
+
+<section id="about">
+  <div class="container" style="text-align:center;">
+    <img src="profile.png" alt="Profile Photo" class="profile-pic" />
+    <h2>DATA ANALYTICS</h2>
+    <p>Hi! I'm <strong style="color: #FFD700;">Abhijith V</strong>, A curious and driven machine learning enthusiast, I thrive at the intersection of data, algorithms, and real-world problem solving. My goal is to leverage machine learning to create meaningful solutions that impact lives.
+
+About Me 🎓 Pursuing B.E Computer Science and Engineering. 💻 Proficient in Python, Pandas, NumPy, Matplotlib, SQL, and data manipulation. 🌱 Passionate about exploring the latest trends and innovations in machine learning and AI., I strive to contribute positively to any project I engage in</p>
+    <h3 style="margin-top:30px; color:#00BFFF;">Skills</h3>
+    <div class="skills" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
+      <span>Python</span><span>Machine Learning</span><span>Data Scicence</span>
+      <span>Power BI</span><span>SQL</span><span>Excel</span><span>Data Cleaning</span><span>Data Visualization</span><span>Data Analysis</span>
+    </div>
+  </div>
+</section>
+
+<!-- Animation Styles -->
+<style>
+    @keyframes glowPulse {
+        0% { box-shadow: 0 0 20px #FFD700, 0 0 50px rgba(255, 215, 0, 0.4); }
+        50% { box-shadow: 0 0 40px #FFD700, 0 0 80px rgba(255, 215, 0, 0.8); }
+        100% { box-shadow: 0 0 20px #FFD700, 0 0 50px rgba(255, 215, 0, 0.4); }
+    }
+    /* Hover effect for skills */
+    #about span:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 15px rgba(255,255,255,0.6);
+    }
+</style> 
+<section id="education" class="education-section">
+  <h2>Education</h2>
+  <div class="education-container">
+    
+    <div class="edu-card">
+      <h3>Bachelor of Engineering in Computer Science</h3>
+      <p class="edu-institute">Dhanlakashmi Srinivasan Engineering college,Perambalur,Tamilnadu</p>
+      <p class="edu-year">2022 - 2026</p>
+      <p class="edu-details">Specialization in Data Analytics, Machine Learning. CGPA: 8.4/10</p>
+    </div>
+    
+    <div class="edu-card">
+      <h3>Higher Secondary Education</h3>
+      <p class="edu-institute">Jay Tech International Senior Secondary School,Theni,Tamil Nadu</p>
+      <p class="edu-year">2022</p>
+      <p class="edu-details">Focus on Mathematics, Physics, and Chemistry. Percentage: 80%</p>
+    </div>
+    
+    <div class="edu-card">
+      <h3>Secondary Education</h3>
+      <p class="edu-institute">Jay Tech International Senior Secondary School,Theni,Tamil Nadu</p>
+      <p class="edu-year">2020</p>
+      <p class="edu-details">Completed with a strong foundation in Science . Percentage: 85%</p>
+    </div>
+  
+  </div>
+</section>
+
+<div class="skills-dashboard" style="margin-top:40px; display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+  <div class="counter-card">
+    <h3 class="counter" data-target="95">0</h3>
+    <p>Python</p>
+  </div>
+  <div class="counter-card">
+    <h3 class="counter" data-target="90">0</h3>
+    <p>Machine Learning</p>
+  </div>
+  <div class="counter-card">
+    <h3 class="counter" data-target="85">0</h3>
+    <p>Data Analysis</p>
+  </div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const counters = document.querySelectorAll(".counter");
+  const speed = 100; // speed of animation
+
+  const startCounters = () => {
+    counters.forEach(counter => {
+      const target = +counter.getAttribute("data-target");
+      const updateCount = () => {
+        const count = +counter.innerText;
+        const increment = target / speed;
+        if(count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(updateCount, 30);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      updateCount();
+    });
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    if(entries[0].isIntersecting) {
+      startCounters();
+      observer.disconnect();
+    }
+  }, { threshold: 0.5 });
+
+  observer.observe(document.querySelector(".skills-dashboard"));
+});
+</script>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="grid"> 
+        <div class="card">
+          <img src="images.jpeg" alt="Project 1" style="width:100%; border-radius:8px; margin-bottom:10px;">
+          <h3>Student Exam Mark Prediction</h3>
+          <p>Predicts student exam scores using regression techniques.</p>
+          <a href="https://github.com/Abhijithv224/student_mark_prediction" target="_blank"><button>View Code</button></a>
+        </div>
+        <div class="card">
+          <img src="wallmart.jpg" alt="Project 2" style="width:100%; border-radius:8px; margin-bottom:10px;">
+          <h3>Walmart Sales Data Analysis Dashboard</h3>
+          <p>Provided a clear, data-backed understanding of sales distribution and profitability patterns.</p>
+          <a href="https://github.com/Abhijithv224/wallmart-dashboard" target="_blank"><button>View Code</button></a>
+        </div>
+        <div class="card">
+          <img src="airlineanalysis.jpg" alt="Project 3" style="width:100%; border-radius:8px; margin-bottom:10px;">
+          <h3>Airline-Analysis-Dashboard</h3>
+          <p>Interactive dashboard visualizing flight performance, delays, and cancellations.</p>
+          <a href="https://github.com/Abhijithv224/Airline-Analysis-Dashboard/tree/main" target="_blank"><button>View Code</button></a>
+        </div>
+        <div class="card">
+          <img src="airesearch.jpeg" alt="Project 4" style="width:100%; border-radius:8px; margin-bottom:10px;">
+          <h3>AI-RESEARCH-ASSISTANT</h3>
+          <p>An intelligent system that uses natural language processing and machine learning to help researchers summarize papers, extract key insights, and generate relevant literature reviews efficiently.</p>
+          <a href="https://github.com/Abhijithv224/AI-RESEARCH-ASSISTANT" target="_blank"><button>View Code</button></a>
+        </div>
+        <div class="card">
+          <img src="house.jpeg" alt="Project 5" style="width:100%; border-radius:8px; margin-bottom:10px;">
+          <h3>House-Price-Predictor</h3>
+          <p>Predicts house prices using regression models.</p>
+          <a href="https://github.com/Abhijithv224/House-Price-Predictor" target="_blank"><button>View Code</button></a>
+        </div>
+        <div class="card">
+          <img src="bmi.png" alt="Project 6" style="width:100%; border-radius:8px; margin-bottom:10px;">
+          <h3>BMI-Calculator</h3>
+          <p>A simple application that calculates Body Mass Index (BMI) based on height and weight, helping users assess their health category (underweight, normal, overweight, or obese).</p>
+          <a href="https://github.com/Abhijithv224/BMI-Calculator" target="_blank"><button>View Code</button></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ACHIEVEMENTS -->
+  <section id="achievements">
+    <div class="container">
+      <h2>Achievements</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="achievement1.png" alt="Achievement 1" style="width:100%; border-radius:8px; margin-bottom:10px;">
+          <h3>Course</h3>
+          <p>Infosys SpringBoard Learning Microsoft PowerBI.</p>
+          <a href="C:\Users\abhij\OneDrive\Desktop\ABHIJITH V\infosys.pdf" target="_blank"><button>View Certificate</button></a>
+        </div>
+        <div class="card">
+          <img src="Atharvo.png" alt="Achievement 2" style="width:100%; border-radius:8px; margin-bottom:10px;">
+          <h3>Intership</h3>
+          <p>Intership certificate by Atharvo on ML .</p>
+          <a href="C:/Users/abhij/OneDrive/Desktop/ABHIJITH%20V/atharvointernship.pdf" target="_blank"><button>View Certificate</button></a>
+        </div>
+        <div class="card">
+          <img src="achievement3.PNG" alt="Achievement 3" style="width:100%; border-radius:8px; margin-bottom:10px;">
+          <h3>Course era</h3>
+          <p> Supervised Machine Learning: Regression and Classification</p>
+          <a href="C:\Users\abhij\OneDrive\Desktop\ABHIJITH V\certificate2.pdf" target="_blank"><button>View Certificate</button></a>
+        </div>
+      <div class="achievement-card">
+      <img src="accenture.png" alt="Achievement 4" style="width:100%; border-radius:8px; margin-bottom:10px;">
+      <h3>Course- 2024</h3>
+      <p> Data	Analytics and Visualization	Job Simulation</p>
+      <a href="C:\Users\abhij\OneDrive\Desktop\ABHIJITH V\DOC-20240519-WA0029..pdf" target="_blank" rel="noopener noreferrer">
+        <button style="background-color: yellow; color: black; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer;">
+          View Certificate
+        </button>
+      </a>
+      </div>
+      </div>
+    </div>
+  </section>
+<section id="fun">
+  <div class="container">
+    <h2>Fun & Memories</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="fun1.jpg" alt="Fun Moment 1">
+        <h3>College Fest</h3>
+        <p>Memorable coding marathon with friends.</p>
+      </div>
+      <div class="card">
+        <img src="fun2.jpg" alt="Fun Moment 2">
+        <h3>Hackathon Night</h3>
+        <p>48 hours of pizza, code, and laughter.</p>
+      </div>
+      <div class="card">
+        <img src="fun3.jpg" alt="Fun Moment 3">
+        <h3>Trip with Teammates</h3>
+        <p>Exploring nature after a big project release.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="contact" style="padding: 60px 20px; text-align: center;">
+  <h2 style="color: #FFD700; font-size: 2.5rem; margin-bottom: 30px;">Contact Me</h2>
+  
+  <form class="contact-form">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Your Message" rows="5" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+ <!-- FOOTER -->
+  <footer>
+    <p>© 2025 ABHIJITH. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
