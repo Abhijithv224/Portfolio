@@ -7,7 +7,7 @@
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <style>
 .education-section {
   padding: 60px 20px;
@@ -515,10 +515,10 @@ document.addEventListener("DOMContentLoaded", () => {
 <section id="contact" style="padding: 60px 20px; text-align: center;">
   <h2 style="color: #FFD700; font-size: 2.5rem; margin-bottom: 30px;">Contact Me</h2>
   
-  <form class="contact-form">
-    <input type="text" placeholder="Your Name" required>
-    <input type="email" placeholder="Your Email" required>
-    <textarea placeholder="Your Message" rows="5" required></textarea>
+  <form id="contact-form" class="contact-form">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
     <button type="submit">Send Message</button>
   </form>
 </section>
@@ -526,6 +526,27 @@ document.addEventListener("DOMContentLoaded", () => {
   <footer>
     <p>© 2025 ABHIJITH. All rights reserved.</p>
   </footer>
+  <script>
+  (function(){
+    emailjs.init("Lt4-Ij6dZdGOEb188");
+  })();
 
+  document.getElementById("contact-form")
+    .addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      emailjs.sendForm(
+        "service_hv1tfef",
+        "template_8d6vlw5",
+        this
+      ).then(() => {
+        alert("Message sent successfully!");
+        this.reset();
+      }, (error) => {
+        alert("Failed to send message 😢");
+        console.log(error);
+      });
+    });
+</script>
 </body>
 </html>
