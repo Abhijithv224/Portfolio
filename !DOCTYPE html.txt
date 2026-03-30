@@ -300,7 +300,7 @@ button:hover {
 
 <section id="about">
   <div class="container" style="text-align:center;">
-    <img src="your-profile-photo.jpg" alt="Profile Photo" class="profile-pic" />
+    <img src="mypic.jpeg" alt="Profile Photo" class="profile-pic" />
     <h2>DATA ANALYTICS</h2>
     <p>Hi! I'm <strong style="color: #FFD700;">Abhijith V</strong>, A curious and driven machine learning enthusiast, I thrive at the intersection of data, algorithms, and real-world problem solving. My goal is to leverage machine learning to create meaningful solutions that impact lives.
 
